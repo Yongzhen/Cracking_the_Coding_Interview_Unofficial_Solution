@@ -21,5 +21,4 @@
 > in the linked list
 > EXAMPLE
 > input: A -> B -> C -> D -> E -> C [the same C as earlier]
-
 > output: C
