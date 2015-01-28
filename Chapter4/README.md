@@ -1,18 +1,17 @@
-# Chapter 3 : Stacks and Queues
+# Chapter 4 : Trees and Graphs
 
+1. Implement a function to check if a tree is balanced. For the purposes of this question, a balanced tree is defined to be a tree such that no two leaf nodes differ in distance from the root by more than one. 
 
-1. Describe how you could use a single array to implement three stacks.
+2. Given a directed graph, design an algorithm to find out whether there is a route be- tween two nodes.
 
-2. How would you design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop and min should all operate in O(1) time.
-3. Imagine a (literal) stack of plates. If the stack gets too high, it might topple. There- fore, in real life, we would likely start a new stack when the previous stack exceeds some threshold. Implement a data structure SetOfStacks that mimics this. SetOf- Stacks should be composed of several stacks, and should create a new stack once the previous one exceeds capacity. SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single stack (that is, pop() should return the same values as it would if there were just a single stack).  
-<p>FOLLOW UP
-<p>Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
+3. Given a sorted (increasing order) array, write an algorithm to create a binary tree with minimal height.
 
-4. In the classic problem of the Towers of Hanoi, you have 3 rods and N disks of different sizes which can slide onto any tower. The puzzle starts with disks sorted in ascending order of size from top to bottom (e.g., each disk sits on top of an even larger one). You have the following constraints:
-<p>(A) Only one disk can be moved at a time.
-<p>(B) A disk is slid off the top of one rod onto the next rod.
-<p>(C) A disk can only be placed on top of a larger disk.
-<p>Write a program to move the disks from the first rod to the last using Stacks.
+4. Given a binary search tree, design an algorithm which creates a linked list of all the nodes at each depth (i.e., if you have a tree with depth D, you’ll have D linked lists).
 
-5. Implement a MyQueue class which implements a queue using two stacks. 
-6. Write a program to sort a stack in ascending order. You should not make any assump- tions about how the stack is implemented. The following are the only functions that should be used to write this program: push | pop | peek | isEmpty. 
+5. Write an algorithm to find the ‘next’ node (i.e., in-order successor) of a given node in a binary search tree where each node has a link to its parent.
+
+6. Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not necessarily a binary search tree. 
+
+7. You have two very large binary trees: T1, with millions of nodes, and T2, with hun- dreds of nodes. Create an algorithm to decide if T2 is a subtree of T1.
+
+8. You are given a binary tree in which each node contains a value. Design an algorithm to print all paths which sum up to that value. Note that it can be any path in the tree - it does not have to start at the root.
