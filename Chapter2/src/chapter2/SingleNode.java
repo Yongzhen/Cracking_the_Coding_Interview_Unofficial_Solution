@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class SingleNode {
 
-	SingleNode next;
-	int data;
+	public SingleNode next;
+	public int data;
 
 	public SingleNode(int d) {
 		data = d; 
@@ -19,6 +19,23 @@ public class SingleNode {
 			currentNode = currentNode.next;
 		}
 		currentNode.next = end;
+	}
+	
+	public static SingleNode reverse(SingleNode head) {
+		if(head == null) {
+			return null;
+		}
+		SingleNode currentNode = head.next;
+		SingleNode previousNode = head;
+		head.next = null;
+		
+		while(currentNode != null) {
+			SingleNode tmp = currentNode.next;
+			currentNode.next = previousNode;
+			previousNode = currentNode;
+			currentNode = tmp;
+		}
+		return previousNode;
 	}
 	
 	  /*********************************************/

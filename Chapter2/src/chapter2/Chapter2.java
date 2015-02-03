@@ -3,11 +3,31 @@ package chapter2;
 public class Chapter2 {
 
 	public static void main(String[] args) {
+		testReverse();
 		testProblem1();
 		testProblem2();
 		testProblem3();
 		testProblem4();
 		testProblem5();
+	}
+	
+	private static void testReverse() {
+		System.out.println("\n\nTest Reverse:\n");
+		
+		SingleNode head = new SingleNode(1);
+		head.appendToTail(2);
+		head.appendToTail(3);
+		head.appendToTail(3);
+		head.appendToTail(2);
+		head.appendToTail(4);
+		
+		System.out.println("Before reverse:");
+		printSingleNodeList(head);
+		
+		head = SingleNode.reverse(head);
+		
+		System.out.println("After reverse:");
+		printSingleNodeList(head);
 	}
 	
 	private static void testProblem1() {
