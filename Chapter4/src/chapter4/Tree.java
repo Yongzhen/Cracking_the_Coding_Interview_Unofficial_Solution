@@ -45,6 +45,23 @@ public class Tree {
 		right.parent = null;
 	}
 
+	public static boolean checkBST(Tree head) {
+		if(head == null) {
+			return false;
+		}
+		return checkBSTSub(head, Integer.MAX_VALUE, Integer.MIN_VALUE);
+	}
+	
+	private static boolean checkBSTSub(Tree node, int max, int min) {
+		if(node.data >= max || node.data <= min) {
+			return false;
+		}
+		boolean leftBST = node.left == null ? true : checkBSTSub(node.left, node.data, min);
+		boolean rightBST = node.right == null ? true : checkBSTSub(node.right, max, node.data);
+		
+		return leftBST && rightBST;	
+	}
+	
 	/*********************************************/
 	/***************** Problem 1 *****************/
 	/*********************************************/

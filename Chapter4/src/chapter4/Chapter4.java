@@ -7,6 +7,7 @@ import java.util.List;
 public class Chapter4 {
 
 	public static void main(String[] args) {
+		testCheckBinarySearchTree();
 		testProblem1();
 		testProblem3();
 		testProblem4();
@@ -14,6 +15,20 @@ public class Chapter4 {
 		testProblem6();
 		testProblem7();
 		testProblem8();
+	}
+	
+	private static void testCheckBinarySearchTree() {
+		System.out.println("\n\nTest Check Binary Search Tree:\n");
+
+		Tree root = generateTestTree();;
+
+		printTree(root);
+		System.out.println("Check BST: " + Tree.checkBST(root));
+		
+		root.left.right.addRight(9);
+		
+		printTree(root);
+		System.out.println("Check BST: " + Tree.checkBST(root));
 	}
 	
 	private static void testProblem1() {
