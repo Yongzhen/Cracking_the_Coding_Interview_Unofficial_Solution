@@ -167,7 +167,7 @@ public class SingleNode {
 	
 	//This solution used HashSet to simplify the problem, instead if we can't use any buffer, it will need to do the trick like the official solution, keep two pointers moving at different speed.
 	public static SingleNode detectLoop(SingleNode head) {
-		Set<SingleNode> nodeSet = new HashSet<SingleNode>();
+		HashSet<SingleNode> nodeSet = new HashSet<SingleNode>();
 		SingleNode currentNode = head;
 		
 		while(currentNode != null) {

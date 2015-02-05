@@ -113,7 +113,7 @@ public class Chapter2 {
 	}
 	
 	private static void testProblem5() {
-		System.out.println("\n\nProblem4 test:\n");
+		System.out.println("\n\nProblem5 test:\n");
 		
 		SingleNode head = new SingleNode(1);
 		head.appendToTail(2);
