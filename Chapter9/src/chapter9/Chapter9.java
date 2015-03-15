@@ -17,31 +17,80 @@ public class Chapter9 {
 
 	private static void testSort() {
 		System.out.println("Test Sort:");
-
+		testBubbleSort();
+		testSelectionSort();
+		testInsertionSort();
+		testMergeSort();
+		testMergeSortInPlace();
+		testQuickSort();
+		testBucketSort();
+	}
+	
+	private static void testBubbleSort() {
 		int[] testArray = {24,2,45,20,56,75,2,56,99,53,12};
 		System.out.println("\nTest Array:");
 		printArray(testArray);
-
+		
 		System.out.println("\nBubble Sort:");
 		printArray(Sort.bubbleSort(testArray, true));
 		printArray(Sort.bubbleSort(testArray, false));
-
+	}
+	
+	private static void testSelectionSort() {
+		int[] testArray = {24,2,45,20,56,75,2,56,99,53,12};
+		System.out.println("\nTest Array:");
+		printArray(testArray);
+		
 		System.out.println("\nSelection Sort:");
 		printArray(Sort.selectionSort(testArray, true));
 		printArray(Sort.selectionSort(testArray, false));
+	}
+	
+	private static void testInsertionSort() {
+		int[] testArray = {24,2,45,20,56,75,2,56,99,53,12};
+		System.out.println("\nTest Array:");
+		printArray(testArray);
 		
 		System.out.println("\nInsertion Sort:");
 		printArray(Sort.insertionSort(testArray, true));
 		printArray(Sort.insertionSort(testArray, false));
-
+	}
+	
+	private static void testMergeSort() {
+		int[] testArray = {24,2,45,20,56,75,2,56,99,53,12};
+		System.out.println("\nTest Array:");
+		printArray(testArray);
+		
 		System.out.println("\nMerge Sort:");
 		printArray(Sort.mergeSort(testArray, true));
-		printArray(Sort.selectionSort(testArray, false));
-
+		printArray(Sort.mergeSort(testArray, false));
+	}
+	
+	private static void testMergeSortInPlace() {
+		int[] testArray = {24,2,45,20,56,75,2,56,99,53,12};
+		System.out.println("\nTest Array:");
+		printArray(testArray);
+		
+		System.out.println("\nMerge Sort in Place:");
+		Sort.mergeSortInPlace(testArray);
+		printArray(testArray);
+	}
+	
+	private static void testQuickSort() {
+		int[] testArray = {24,2,45,20,56,75,2,56,99,53,12};
+		System.out.println("\nTest Array:");
+		printArray(testArray);
+		
 		System.out.println("\nQuick Sort:");
 		printArray(Sort.quickSort(testArray, true));
 		printArray(Sort.quickSort(testArray, false));
-
+	}
+	
+	private static void testBucketSort() {
+		int[] testArray = {24,2,45,20,56,75,2,56,99,53,12};
+		System.out.println("\nTest Array:");
+		printArray(testArray);
+		
 		System.out.println("\nBucket Sort:");
 		printArray(Sort.bucketSort(testArray, true));
 		printArray(Sort.bucketSort(testArray, false));
@@ -300,10 +349,5 @@ public class Chapter9 {
 		System.out.println("Longest sequence");
 		System.out.println(findLongestSequence(people).toString());
 	}
-
-
-
-
-
 
 }

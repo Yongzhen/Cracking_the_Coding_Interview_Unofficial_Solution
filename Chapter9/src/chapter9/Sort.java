@@ -121,6 +121,47 @@ public class Sort {
 		return result;
 	}
 	
+	//Merge Sort in Place:
+	
+	public static void mergeSortInPlace(int[] array) {
+		if(array.length <= 1) {
+			return;
+		}
+		int[] tmp = new int[array.length];
+		mergeSortInPlaceSub(array, 0, array.length - 1, tmp);
+	}
+	
+	private static void mergeSortInPlaceSub(int[] array, int leftIndex, int rightIndex, int[] tmp) {
+		if(leftIndex >= rightIndex) {
+			return;
+		}
+		int midIndex = (leftIndex + rightIndex) / 2;
+		mergeSortInPlaceSub(array, leftIndex, midIndex, tmp);
+		mergeSortInPlaceSub(array, midIndex + 1, rightIndex, tmp);
+		
+		for(int i = leftIndex; i <= rightIndex; i++) {
+			tmp[i] = array[i];
+		}
+		int leftArrayIndex = leftIndex;
+		int rightArrayIndex = midIndex + 1;
+		int resultIndex = leftIndex;
+		
+		while(leftArrayIndex <= midIndex && rightArrayIndex <= rightIndex) {
+			if(tmp[leftArrayIndex] > tmp[rightArrayIndex]) {
+				array[resultIndex++] = tmp[rightArrayIndex++];
+			} else {
+				array[resultIndex++] = tmp[leftArrayIndex++];
+			}
+		}
+		while(leftArrayIndex <= midIndex) {
+			array[resultIndex++] = tmp[leftArrayIndex++];
+		}
+		while(rightArrayIndex <= rightIndex) {
+			array[resultIndex++] = tmp[rightArrayIndex++];
+		}
+	}
+	
+	
 	  /*********************************************/
 	 /**************** Quick Sort *****************/
 	/*********************************************/
@@ -131,6 +172,9 @@ public class Sort {
 	}
 	
 	private static void quickSortSub(int[] unsorted, int leftIndex, int rightIndex, boolean ascending) {
+		if(rightIndex <= leftIndex) {
+			return;
+		}
 		int i = leftIndex;
 		int j = rightIndex;
 		int pivot = unsorted[(leftIndex + rightIndex) / 2];
